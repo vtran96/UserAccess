@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UserAccess — NYCEM Access Management</title>
+  <meta name="description" content="Grant, revoke, and manage user access to applications and databases across the organization." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div id="app-shell">
+
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">UA</div>
+      <div>
+        <div class="logo-text">UserAccess</div>
+        <div class="logo-sub">NYCEM Portal</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <div class="nav-item" id="nav-dashboard" onclick="navigate('/')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </div>
+      <div class="nav-item" id="nav-users" onclick="navigate('/users')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        Users
+      </div>
+      <div class="nav-item" id="nav-apps" onclick="navigate('/apps')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Applications
+      </div>
+      <div class="nav-item nav-sub-item" id="nav-access-levels" onclick="navigate('/access-levels')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Access Levels
+      </div>
+
+      <div class="nav-section-label">Management</div>
+      <div class="nav-item" id="nav-access" onclick="navigate('/access')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        Access Records
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar" id="sidebar-avatar">A</div>
+        <div class="user-info">
+          <div class="user-name" id="sidebar-name">Administrator</div>
+          <div class="user-role" id="sidebar-role">Admin</div>
+        </div>
+        <button class="logout-btn" title="Sign out" onclick="logout()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Main Area ───────────────────────────────────────── -->
+  <div id="main-area">
+    <header id="header">
+      <div class="breadcrumb" id="breadcrumb">
+        <span class="current">Dashboard</span>
+      </div>
+      <div class="header-spacer"></div>
+      <div class="header-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="global-search" type="text" placeholder="Quick search users or apps…" />
+      </div>
+    </header>
+
+    <main id="content">
+      <div class="loading-center">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading…</div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- Scripts -->
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/components/toast.js"></script>
+<script src="js/components/modal.js"></script>
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/users.js"></script>
+<script src="js/views/user-detail.js"></script>
+<script src="js/views/applications.js"></script>
+<script src="js/views/app-detail.js"></script>
+<script src="js/views/access-records.js"></script>
+<script src="js/views/access-levels.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

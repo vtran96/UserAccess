@@ -1,0 +1,19 @@
+CREATE TABLE [dbo].[User_Group](
+	[RecId] [varchar](7) NOT NULL,
+	[UserId] [varchar](31) NOT NULL,
+	[GroupN] [varchar](31) NOT NULL,
+	[ApplicationId] [varchar](31) NULL,
+	[CreatedOn] [smalldatetime] NULL,
+CONSTRAINT [PK_User_Group] PRIMARY KEY CLUSTERED 
+(
+	[RecId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ 
+ALTER TABLE [dbo].[User_Group] ADD  CONSTRAINT [DF_User_Group_RecId]  DEFAULT (left(newid(),7)) FOR [RecId]
+GO
+ 
+ALTER TABLE [dbo].[User_Group] ADD  CONSTRAINT [DF_User_Group_CreatedOn]  DEFAULT (getdate()) FOR [CreatedOn]
+GO
+ 

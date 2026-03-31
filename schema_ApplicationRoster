@@ -1,0 +1,38 @@
+CREATE TABLE [dbo].[ApplicationRoster](
+
+	[AppId] [varchar](31) NOT NULL,
+
+	[aName] [varchar](63) NOT NULL,
+
+	[WebConsole] [varchar](3) NULL,
+
+	[CloudStart] [varchar](63) NULL,
+
+	[aServer] [varchar](31) NULL,
+
+	[aDirectory] [varchar](31) NULL,
+
+	[dbName] [varchar](31) NULL,
+
+	[IsInternal] [bit] NULL,
+
+	[DbServer] [varchar](31) NULL,
+
+	[intURL] [varchar](100) NULL,
+
+	[extURL] [varchar](300) NULL,
+
+CONSTRAINT [PK_AppRo] PRIMARY KEY CLUSTERED 
+
+(
+
+	[AppId] ASC
+
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+) ON [PRIMARY]
+
+GO
+ 
+ 
+ 
